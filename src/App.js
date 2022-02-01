@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
-
+import ItemForm from './components/itemForm';
 function App() {
   /*
   Create a Travel checklist application that meets the specified requirements.
@@ -22,20 +22,15 @@ function App() {
     -list will be made by mapping through items array
     -each item will have button for checking state
     -each item will have delete button
-    -maybe add an edit button? 
-  
-    
-  
+    -maybe add an edit button?   
   */
-
+  const [itemInfo, setItemInfo] = useState("");
 
   return (
     <div className="App">
       <h1>Travel Checklist</h1>
       <div className='checklist-main'>
-        <div className='item-form'>
-          <p>add an item</p>
-        </div>
+        <ItemForm />
         <div className='item-list'>
           <p>item list</p>
         </div>
