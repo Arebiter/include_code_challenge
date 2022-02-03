@@ -30,11 +30,13 @@ function App() {
     "packed": false
   });
 
+  const [items, setItems] = useState([]) //will be an array of items
+
   return (
     <div className="App">
       <h1>Travel Checklist</h1>
       <div className='checklist-main'>
-        <ItemForm setItemInfo={setItemInfo} itemInfo={itemInfo} />
+        <ItemForm setItemInfo={setItemInfo} itemInfo={itemInfo} setItems={setItems} items={items} />
         <div className='item-list'>
           <p>item list</p>
         </div>

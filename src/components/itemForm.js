@@ -1,20 +1,25 @@
 import React from "react";
 
 
-const ItemForm = ({ itemInfo, setItemInfo }) => {
+const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
     //functions to handle input
-    const handleChange = (e) => { //handle name changes only the name information in the item info
-        // const info = { ...itemInfo };
-        // info.name = e.target.value;
-        // setItemInfo(info);
+    console.log(itemInfo);
+    const handleChange = (e) => {
         setItemInfo({
             ...itemInfo,
             [e.target.name]: e.target.value
         });
-        console.log(itemInfo)
     }
 
-
+    //hitting submit should clear this information and reset the state
+    const submitItemInfo = (e) => {
+        e.preventDefault(); //prevent rerender of page
+        setItems([
+            ...items,
+            { item: { ...itemInfo } }
+        ])
+        console.log(items);
+    }
     return (
         <div className="item-form">
             <p>Add Item</p>
@@ -25,7 +30,7 @@ const ItemForm = ({ itemInfo, setItemInfo }) => {
                     <option value={false}>Unpacked</option>
                     <option value={true}>Packed</option>
                 </select>
-                <input type="submit" className="item-create-button" value="Add Item" />
+                <input type="submit" className="item-create-button" value="Add Item" onClick={submitItemInfo} />
             </form>
         </div>
     )
