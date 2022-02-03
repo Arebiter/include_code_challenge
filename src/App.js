@@ -32,6 +32,13 @@ function App() {
   });
 
   const [items, setItems] = useState([]) //will be an array of items
+  console.log(items);
+  const renderList = (
+    items.map((item, id) => {
+      return (<Item key={`${item.name, id}`} item={item} />);
+    })
+  )
+
 
   return (
     <div className="App">
@@ -39,9 +46,7 @@ function App() {
       <div className='checklist-main'>
         <ItemForm setItemInfo={setItemInfo} itemInfo={itemInfo} setItems={setItems} items={items} />
         <div className='item-list'>
-          {items.map((item, id) => {
-            return (<Item key={`${item.name, id}`} item={item} />);
-          })}
+          {renderList}
         </div>
       </div>
     </div>
