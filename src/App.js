@@ -27,8 +27,7 @@ function App() {
   */
   const [itemInfo, setItemInfo] = useState({
     "name": "",
-    "quantity": 0,
-    "packed": false
+    "quantity": 0
   });
 
   const [items, setItems] = useState([]) //will be an array of items
