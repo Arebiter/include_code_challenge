@@ -3,8 +3,8 @@ import React from "react";
 
 const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
     //functions to handle input
-    console.log(itemInfo);
-    console.log(items);
+    // console.log(itemInfo);
+    // console.log(items);
     const handleChange = (e) => {
         setItemInfo({
             ...itemInfo,
@@ -16,21 +16,22 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
     const submitItemInfo = (e) => {
         e.preventDefault(); //prevent rerender of page
         setItems([
-            ...items,
-            { item: { ...itemInfo } }
-        ])
+            ...items,//[{name, quantity, packed}, {name, quanity, packed}]
+            { ...itemInfo }
+        ]);
+        // debugger
     }
     return (
         <div className="item-form">
             <p>Add Item</p>
-            <form className="item-create-form">
+            <form className="item-create-form" onSubmit={submitItemInfo}>
                 <input type="text" className="item-name" onChange={handleChange} value={itemInfo.name} name="name" />
                 <input type="number" className="item-quantity" onChange={handleChange} value={itemInfo.quantity} name="quantity" />
                 {/* <select name="status" className="item-status" onChange={handleChange} value={itemInfo.packed} name="packed">
                     <option value={false}>Unpacked</option>
                     <option value={true}>Packed</option>
                 </select> */}
-                <input type="submit" className="item-create-button" value="Add Item" onClick={submitItemInfo} />
+                <input type="submit" className="item-create-button" value="Add Item" />
             </form>
         </div>
     )
