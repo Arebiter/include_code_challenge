@@ -1,19 +1,14 @@
 import React from "react";
 
 
-const Item = ({ ...item }) => {
-    console.log(...item);
-    // console.log(packed);
-    // const packedState = {
-    //     if(packed)
-    // }
-
-
+const Item = ({ item }) => {
+    const { name, quantity, packed } = item;
+    console.log(name);
     return (
         <div>
-            <p>{item.name}</p>
-            <p>{item.quantity}</p>
-            <p></p>
+            <p>{name}</p>
+            <p>{quantity}</p>
+            <p>{packed}</p>
         </div>
     )
 }
