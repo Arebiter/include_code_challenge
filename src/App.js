@@ -24,13 +24,17 @@ function App() {
     -each item will have delete button
     -maybe add an edit button?   
   */
-  const [itemInfo, setItemInfo] = useState("");
+  const [itemInfo, setItemInfo] = useState({
+    "name": "",
+    "quantity": 0,
+    "packed": false
+  });
 
   return (
     <div className="App">
       <h1>Travel Checklist</h1>
       <div className='checklist-main'>
-        <ItemForm />
+        <ItemForm setItemInfo={setItemInfo} itemInfo={itemInfo} />
         <div className='item-list'>
           <p>item list</p>
         </div>
