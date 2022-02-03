@@ -4,6 +4,7 @@ import React from "react";
 const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
     //functions to handle input
     console.log(itemInfo);
+    console.log(items);
     const handleChange = (e) => {
         setItemInfo({
             ...itemInfo,
@@ -18,7 +19,6 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
             ...items,
             { item: { ...itemInfo } }
         ])
-        console.log(items);
     }
     return (
         <div className="item-form">
@@ -26,10 +26,10 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
             <form className="item-create-form">
                 <input type="text" className="item-name" onChange={handleChange} value={itemInfo.name} name="name" />
                 <input type="number" className="item-quantity" onChange={handleChange} value={itemInfo.quantity} name="quantity" />
-                <select name="status" className="item-status" onChange={handleChange} value={itemInfo.packed} name="packed">
+                {/* <select name="status" className="item-status" onChange={handleChange} value={itemInfo.packed} name="packed">
                     <option value={false}>Unpacked</option>
                     <option value={true}>Packed</option>
-                </select>
+                </select> */}
                 <input type="submit" className="item-create-button" value="Add Item" onClick={submitItemInfo} />
             </form>
         </div>

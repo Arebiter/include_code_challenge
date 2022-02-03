@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import ItemForm from './components/itemForm';
+import Item from './components/item';
 function App() {
   /*
   Create a Travel checklist application that meets the specified requirements.
@@ -38,7 +39,9 @@ function App() {
       <div className='checklist-main'>
         <ItemForm setItemInfo={setItemInfo} itemInfo={itemInfo} setItems={setItems} items={items} />
         <div className='item-list'>
-          <p>item list</p>
+          {items.map((item, id) => {
+            return (<Item key={`${item.name, id}`} item={item} />);
+          })}
         </div>
       </div>
     </div>
