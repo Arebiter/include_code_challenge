@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 
 
-const Item = ({ item }) => {
-    const { name, quantity } = item;
-    const [packed, setPacked] = useState(false);
+const Item = ({ item, setItems }) => {
+    const { name, quantity, packed } = item;
+    // const [packed, setPacked] = useState(false);
 
-    const handlePacked = () => {
-        if (packed) {
-            setPacked(false);
-        } else {
-            setPacked(true);
-        }
-        console.log(packed);
+    // const handlePacked = () => {
+    //     if (packed) {
+    //         setPacked(false);
+    //     } else {
+    //         setPacked(true);
+    //     }
+    //     console.log(packed);
+    // }
+
+    const deleteItem = (e) => {
+
     }
+
     return (
-        <div>
-            <p>{name}</p>
-            <p>{quantity}</p>
-            <input type="checkbox" id="packed-status" name="packed" onChange={handlePacked} />
-            <label for="packed">Packed</label>
+        <div className="item">
+            <p className="item-name">{name}</p>
+            <p className="item-quantity">{quantity}</p>
+            <button className="item-packed">Packed</button>
+            <button className="item-delete">Delete</button>
         </div>
     )
 }
