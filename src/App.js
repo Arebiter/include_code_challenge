@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import ItemForm from './components/itemForm';
 import Item from './components/item';
 function App() {
@@ -37,7 +37,7 @@ function App() {
   const renderList = (
     items.map((item) => {
       return (<Item key={item.id} item={item} setItems={setItems} items={items} />);
-    })
+    }).reverse()
   )
 
 
