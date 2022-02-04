@@ -4,7 +4,7 @@ import React from "react";
 const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
     //functions to handle input
     // console.log(itemInfo);
-    // console.log(items);
+    console.log(items);
     const handleChange = (e) => {
         setItemInfo({
             ...itemInfo,
@@ -17,8 +17,8 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
         e.preventDefault();
         setItems([
             ...items,//[{name, quantity, packed}, {name, quanity, packed}]
-            { ...itemInfo, id: Math.random() * 1000 }//create a random id for the items that are added to the list 
-            //the id may be a problem later as there might be duplicate numbers but generating a random number should be ok for now 
+            { ...itemInfo, id: `${itemInfo.name}-${Math.random() * 1000}` }//create a random id for the items that are added to the list 
+            //the id may be a problem later as there might be duplicate numbers but adding the item name makes it more unique, should be ok for now 
         ]);
         setItemInfo({ //to reset the form after submitting
             "name": "",
@@ -33,10 +33,6 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
             <form className="item-create-form" onSubmit={submitItemInfo}>
                 <input type="text" className="item-name" onChange={handleChange} value={itemInfo.name} name="name" />
                 <input type="number" className="item-quantity" onChange={handleChange} value={itemInfo.quantity} name="quantity" />
-                {/* <select name="status" className="item-status" onChange={handleChange} value={itemInfo.packed} name="packed">
-                    <option value={false}>Unpacked</option>
-                    <option value={true}>Packed</option>
-                </select> */}
                 <input type="submit" className="item-create-button" value="Add Item" />
             </form>
         </div>
