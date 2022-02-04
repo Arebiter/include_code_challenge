@@ -1,15 +1,27 @@
-@import "CSS_Folder/item.scss";
-@import "CSS_Folder/itemForm.scss";
-
 $background: #f4f6f9;
 $item: #0b9a8b;
 $item-packed: #e0e0e0;
+$box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
+
+@import "CSS_Folder/item.scss";
+@import "CSS_Folder/itemForm.scss";
 
 body{
     background-color: $background;
 }
 
-.App{
 
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1{
+        font-size: 40px;
+    }
+}
+
+.item-list{
+    margin-top: 40px;
 }
