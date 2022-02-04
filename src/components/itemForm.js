@@ -19,7 +19,12 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
             ...items,//[{name, quantity, packed}, {name, quanity, packed}]
             { ...itemInfo }
         ]);
-        // debugger
+        setItemInfo({ //to reset the form after submitting
+            "name": "",
+            "quantity": 0,
+            "packed": false
+        })
+
     }
     return (
         <div className="item-form">
