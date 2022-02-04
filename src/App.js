@@ -15,15 +15,13 @@ function App() {
   -page will have area to create a form
     -need input for name
     -number input for amount
-    -button or check for state
   
     each item made will be added to items array
   
   -page will have area displaying list of items
     -list will be made by mapping through items array
-    -each item will have button for checking state
+    -each item will have button for changing state
     -each item will have delete button
-    -maybe add an edit button?   
   */
   const [itemInfo, setItemInfo] = useState({
     "name": "",

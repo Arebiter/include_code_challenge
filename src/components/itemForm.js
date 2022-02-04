@@ -2,9 +2,7 @@ import React from "react";
 
 
 const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
-    //functions to handle input
-    // console.log(itemInfo);
-    console.log(items);
+    //handleChange adds values from inputs to itemInfo 
     const handleChange = (e) => {
         setItemInfo({
             ...itemInfo,
@@ -25,8 +23,8 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
             "quantity": 1,
             "packed": false
         })
-
     }
+
     return (
         <div className="item-form">
             <form className="item-create-form" onSubmit={submitItemInfo}>

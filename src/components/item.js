@@ -20,6 +20,7 @@ const Item = ({ item, setItems, items }) => {
             return ele; //return the ele if you don't find it in the list
         }))
     }
+
     //added ternary to item className to add "complete" if the item's packed state is true 
     return (
         <div className={`item ${item.packed ? ("complete") : ("")}`}>
