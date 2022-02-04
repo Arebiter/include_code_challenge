@@ -27,7 +27,7 @@ function App() {
   */
   const [itemInfo, setItemInfo] = useState({
     "name": "",
-    "quantity": 0,
+    "quantity": 1,
     "packed": false
   });
 
