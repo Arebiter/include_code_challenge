@@ -35,8 +35,8 @@ function App() {
 
 
   const renderList = (
-    items.map((item, id) => {
-      return (<Item key={`${item.name, id}`} item={item} setItems={setItems} />);
+    items.map((item) => {
+      return (<Item key={item.id} item={item} setItems={setItems} items={items} />);
     })
   )
 
