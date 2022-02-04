@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const Item = ({ item, setItems }) => {
+const Item = ({ item, setItems, items }) => {
     const { name, quantity, packed } = item;
     // const [packed, setPacked] = useState(false);
 
@@ -15,6 +15,10 @@ const Item = ({ item, setItems }) => {
     // }
 
     const deleteItem = (e) => {
+        setItems(items.filter((ele) => ele.id !== item.id));
+    }
+
+    const packItem = (e) => {
 
     }
 
@@ -23,7 +27,7 @@ const Item = ({ item, setItems }) => {
             <p className="item-name">{name}</p>
             <p className="item-quantity">{quantity}</p>
             <button className="item-packed">Packed</button>
-            <button className="item-delete">Delete</button>
+            <button className="item-delete" onClick={deleteItem}>Delete</button>
         </div>
     )
 }
