@@ -4,7 +4,7 @@ import React from "react";
 const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
     //functions to handle input
     // console.log(itemInfo);
-    // console.log(items);
+    console.log(items);
     const handleChange = (e) => {
         setItemInfo({
             ...itemInfo,
@@ -14,11 +14,13 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
 
     //hitting submit should clear this information and reset the state
     const submitItemInfo = (e) => {
-        e.preventDefault(); //prevent rerender of page
+        e.preventDefault();
         setItems([
             ...items,//[{name, quantity, packed}, {name, quanity, packed}]
-            { ...itemInfo }
+            { ...itemInfo, id: Math.random() * 1000 }//create a random id for the items that are added to the list 
+            //the id may be a problem later as there might be duplicate numbers but generating a random number should be ok for now 
         ]);
+        console.log(items);
         setItemInfo({ //to reset the form after submitting
             "name": "",
             "quantity": 0,
