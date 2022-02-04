@@ -27,14 +27,16 @@ function App() {
   */
   const [itemInfo, setItemInfo] = useState({
     "name": "",
-    "quantity": 0
+    "quantity": 0,
+    "packed": false
   });
 
   const [items, setItems] = useState([]) //will be an array of items
-  console.log(items);
+
+
   const renderList = (
     items.map((item, id) => {
-      return (<Item key={`${item.name, id}`} item={item} />);
+      return (<Item key={`${item.name, id}`} item={item} setItems={setItems} />);
     })
   )
 
