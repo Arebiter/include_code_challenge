@@ -22,18 +22,17 @@ const ItemForm = ({ itemInfo, setItemInfo, items, setItems }) => {
         ]);
         setItemInfo({ //to reset the form after submitting
             "name": "",
-            "quantity": 0,
+            "quantity": 1,
             "packed": false
         })
 
     }
     return (
         <div className="item-form">
-            <p>Add Item</p>
             <form className="item-create-form" onSubmit={submitItemInfo}>
-                <input type="text" className="item-name" onChange={handleChange} value={itemInfo.name} name="name" />
-                <input type="number" className="item-quantity" onChange={handleChange} value={itemInfo.quantity} name="quantity" />
-                <input type="submit" className="item-create-button" value="Add Item" />
+                <input type="text" className="item-name" placeholder="Name" onChange={handleChange} value={itemInfo.name} name="name" maxLength="40" />
+                <input type="number" className="item-quantity" onChange={handleChange} value={itemInfo.quantity} name="quantity" min="1" />
+                <button className="item-create-button">Add Item</button>
             </form>
         </div>
     )
