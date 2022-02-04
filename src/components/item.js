@@ -25,7 +25,7 @@ const Item = ({ item, setItems, items }) => {
         <div className={`item ${item.packed ? ("complete") : ("")}`}>
             <p className="item-name">{name}</p>
             <p className="item-quantity">{quantity}</p>
-            <button className="item-packed" onClick={packItem}>Packed</button>
+            <button className="item-packed" onClick={packItem}>{item.packed ? "Packed" : "Unpacked"}</button>
             <button className="item-delete" onClick={deleteItem}>Delete</button>
         </div>
     )
